@@ -1,0 +1,6 @@
+<h1>This will be the edit page</h1>
+<form action="/photos/<%= _id %>?_method=PUT" method="post">
+  <input type="text" name="image" placeholder="Image URL" value="<%= image %>">
+  <input type="text" name="description" placeholder="description" value="<%= description %>">
+  <button>UPDATE</button>
+</form>

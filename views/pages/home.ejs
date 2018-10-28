@@ -1,0 +1,6 @@
+<h1>This will be the home page</h1>
+<% if (locals.isLoggedIn) { %>
+  <p>Welcome back <%= locals.currentUser.username %></p>
+<% } else { %>
+  <p>Log in to get full access to this app</p>
+<% }%>

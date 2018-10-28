@@ -1,0 +1,7 @@
+<h1>this will be the index</h1>
+<% photos.forEach(photo => { %>
+  <a href="/photos/<%= photo._id %>" >
+  <img src=" <%= photo.image %> " alt="<%= photo.description %>" />
+  <p> <%= photo.description %></p>
+  </a>
+<% }) %>

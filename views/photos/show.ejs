@@ -1,0 +1,31 @@
+<h1>This will be the show page</h1>
+<img src=" <%= image %> " alt="<%= description %>" />
+<p> <%= description %></p>
+<% if (locals.isLoggedIn) { %>
+<a href="/photos/<%= _id %>/edit"><button>EDIT</button></a>
+<form action="/photos/<%= _id %>?_method=DELETE" method="post">
+  <button>DELETE</button>
+</form>
+<div>
+  <form method="POST" action="/photos/<%= _id %>/comments">
+    <textarea name="comment"></textarea>
+    <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
+    <button>COMMENT</button>
+  </form>
+</div>
+<% } %>
+<div>
+  <% comments.forEach(comment => { %>
+    <div>
+      <div>
+        <p><%= comment.username %></p>
+        <form method="POST" action="/photos/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
+          <button>x</button>
+        </form>
+      </div>
+      <div>
+        <p><%= comment.comment %></p>
+      </div>
+    </div>
+  <% }) %>
+</div>
