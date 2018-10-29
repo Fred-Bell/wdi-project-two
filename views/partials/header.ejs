@@ -1,14 +1,39 @@
-<nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/photos">Index</a></li>
-    <% if (locals.isLoggedIn) { %>
-      <li><a href="/photos/new">Add a photo</a></li>
-      <li><a href="/logout">Log Out</a></li>
-    <% } else { %>
-      <li><a href="/register">Register</a></li>
-      <li><a href="/login">Log In</a></li>
-    <% } %>
-  </ul>
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Instagram_simple_icon.svg/2000px-Instagram_simple_icon.svg.png" width="50px" height="80">
+        <p>|</p>
+        <p>Fredstagram</p>
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-end">
+        <a href="/" class="navbar-item">Home</a>
+        <a href="/about" class="navbar-item">About</a>
+        <a href="/photos" class="navbar-item">Index</a>
+        <% if (locals.isLoggedIn) { %>
+          <a href="/photos/new" class="navbar-item">Add a photo</a>
+          <a href="/logout" class="navbar-item">Log Out</a>
+          <% } else { %>
+            <a href="/register" class="navbar-item">Register</a>
+            <a href="/login" class="navbar-item">Log In</a>
+            <% } %>
+          </div>
+        </div>
+  </div>
 </nav>
+<script type="text/javascript">
+  var burger = document.querySelector('.burger');
+  var nav = document.querySelector('#'+burger.dataset.target);
+
+  burger.addEventListener('click', function(){
+    burger.classList.toggle('is-active');
+    nav.classList.toggle('is-active');
+  });
+</script>
