@@ -1,0 +1,13 @@
+.navbar{
+  border-bottom: 1px solid black;
+  font-size: 1.5vw;
+}
+
+#top-search{
+  width: 30vw;
+  margin-top: 1vh;
+}
+
+#search-icon{
+  margin-top: 1.1vh;
+}
