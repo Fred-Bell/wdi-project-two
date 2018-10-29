@@ -11,7 +11,7 @@ const photoSchema = mongoose.Schema({
       //Will add reply button, likes and time posted?
     }
   ]
-  // Will likes and time/date(how old post is)
+  // Will add likes and time/date(how old post is)
 });
 
 

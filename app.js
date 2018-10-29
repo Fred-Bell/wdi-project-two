@@ -9,7 +9,7 @@ const router = require('./config/routes');
 const auth = require('./lib/auth');
 
 
-const app =express();
+const app = express();
 const port = environment.port;
 
 app.set('view engine', 'ejs');

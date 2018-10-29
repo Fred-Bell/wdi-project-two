@@ -7,6 +7,8 @@ const userSchema = mongoose.Schema({
   password: String
 });
 
+//need to create user pages add following and a feed of who you follow
+
 const userModel = mongoose.model('User', userSchema);
 
 module.exports = userModel;
