@@ -4,8 +4,9 @@
       <img id="show-page-image" class="column is-8" src=" <%= image %> " alt="<%= description %>"/>
     <div class="column is-4">
       <p id="poster-show"><strong>O </strong> USERNAME??  -------------- following</p>
-      <p id="show-page-description"> <%= description %></p>
-      <div>
+
+      <div id="comments-section">
+        <p id="show-page-description"> <%= description %></p>
         <% comments.forEach(comment => { %>
           <div class="columns is-multiline" style="padding: 1vh;">
             <div class="column is-12 columns is-marginless is-paddingless">
@@ -23,15 +24,16 @@
       <% if (locals.isLoggedIn) { %>
         <div>
           <form method="POST" action="/photos/<%= _id %>/comments">
-            <textarea name="comment"></textarea>
+            <input class="textarea is-small" rows= "1" name="comment" placeholder="Press enter to post a comment..."></input>
             <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
-            <button>COMMENT</button>
           </form>
         </div>
-        <a href="/photos/<%= _id %>/edit"><button>EDIT</button></a>
-        <form action="/photos/<%= _id %>?_method=DELETE" method="post">
-          <button>DELETE</button>
-        </form>
+        <div class="columns">
+          <a class="column is-2" href="/photos/<%= _id %>/edit"><button>EDIT</button></a>
+          <form class="column" action="/photos/<%= _id %>?_method=DELETE" method="post">
+            <button>DELETE</button>
+          </form>
+        </div>
         <% } %>
       </div>
   </div>
