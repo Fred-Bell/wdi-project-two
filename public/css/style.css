@@ -26,6 +26,10 @@
   border-bottom: 5px solid black !important;
 }
 
+.navbar-end a i{
+  margin-top: 1.5vh;
+}
+
 #nav-logo{
   color: black;
 }
@@ -53,4 +57,39 @@
 
 main{
   margin-top: 9vh;
+}
+
+.explore{
+  width: 81vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 9vw;
+}
+
+.explore:hover img{
+  opacity: 1;
+}
+
+.post{
+  width: 25vw;
+  height: 25vw;
+  background: black;
+  margin: 1vw;
+}
+
+.post img{
+  width: 25vw;
+  height: 25vw;
+  transition: opacity 0.6s;
+}
+
+.post img:hover{
+  opacity: 0.5;
+}
+footer{
+  margin-top: 3vh !important;
+  text-align: center;
+}
+footer div a{
+  color: black;
 }

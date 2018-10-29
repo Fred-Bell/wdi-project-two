@@ -21,9 +21,9 @@ router.post('/login', authController.login);
 router.get('/logout', authController.logout);
 
 
-router.get('/photos', photoController.index);
+router.get('/photos', secureRoute, photoController.index);
 router.get('/photos/new', secureRoute, photoController.new);
-router.get('/photos/:id', photoController.show);
+router.get('/photos/:id', secureRoute, photoController.show);
 router.post('/photos', secureRoute, photoController.create);
 router.get('/photos/:id/edit', secureRoute, photoController.edit);
 router.put('/photos/:id', secureRoute, photoController.update);
