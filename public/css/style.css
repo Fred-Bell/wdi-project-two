@@ -1,13 +1,56 @@
+
 .navbar{
   border-bottom: 1px solid black;
-  font-size: 1.5vw;
+  font-size: 25px;
+  font-family: 'Oleo Script', cursive;
+}
+
+#navbar{
+  position: fixed;
+  width: 100vw;
+  z-index: 2;
+  margin-top: -11vh;
+}
+
+.navbar-brand{
+  font-size: 35px;
+}
+
+.navbar-end a{
+  color: black;
+}
+
+.navbar-end a:hover{
+  color: black !important;
+  background-color: transparent !important;
+  border-bottom: 5px solid black !important;
+}
+
+#nav-logo{
+  color: black;
+}
+#nav-logo:hover{
+  background-color: transparent;
+  color: black;
+}
+
+#nav-logo img{
+  max-height: 40px;
+}
+
+.navbar div{
+    padding-bottom: 0;
 }
 
 #top-search{
-  width: 30vw;
+  width: 20vw;
   margin-top: 1vh;
 }
 
 #search-icon{
   margin-top: 1.1vh;
+}
+
+main{
+  margin-top: 9vh;
 }

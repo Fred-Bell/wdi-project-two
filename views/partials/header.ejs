@@ -1,9 +1,9 @@
-<nav class="navbar columns is-centered">
+<nav id="navbar" class="navbar columns is-centered">
   <div class="container column is-11 columns">
-    <div class="column is-3-desktop is-12-tablet">
+    <div class="column is-4-desktop is-12-tablet">
       <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Instagram_simple_icon.svg/2000px-Instagram_simple_icon.svg.png" width="50px" height="80">
+        <a id="nav-logo" class="navbar-item" href="/">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Instagram_simple_icon.svg/2000px-Instagram_simple_icon.svg.png">
           <p>|</p>
           <p>Fredstagram</p>
         </a>
@@ -14,7 +14,7 @@
         </a>
       </div>
     </div>
-    <div class="column is-5 is-hidden-mobile is-hidden-tablet-only">
+    <div class="column is-4 is-hidden-mobile is-hidden-tablet-only">
       <div class="navbar-item">
         <p class="control has-icons-left">
           <input id="top-search"class="input is-small" type="text" placeholder="search">
@@ -28,8 +28,7 @@
       <div class="navbar-menu" id="navMenu">
         <div class="navbar-end">
           <a href="/" class="navbar-item">Home</a>
-          <a href="/about" class="navbar-item">About</a>
-          <a href="/photos" class="navbar-item">Index</a>
+          <a href="/photos" class="navbar-item">Explore</a>
           <% if (locals.isLoggedIn) { %>
             <a href="/photos/new" class="navbar-item">Add a photo</a>
             <a href="/logout" class="navbar-item">Log Out</a>
