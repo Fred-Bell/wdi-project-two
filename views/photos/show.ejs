@@ -1,31 +1,39 @@
-<h1>This will be the show page</h1>
-<img src=" <%= image %> " alt="<%= description %>" />
-<p> <%= description %></p>
-<% if (locals.isLoggedIn) { %>
-<a href="/photos/<%= _id %>/edit"><button>EDIT</button></a>
-<form action="/photos/<%= _id %>?_method=DELETE" method="post">
-  <button>DELETE</button>
-</form>
-<div>
-  <form method="POST" action="/photos/<%= _id %>/comments">
-    <textarea name="comment"></textarea>
-    <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
-    <button>COMMENT</button>
-  </form>
-</div>
-<% } %>
-<div>
-  <% comments.forEach(comment => { %>
-    <div>
+<div class="columns is-centred">
+  <div class="column is-2"></div>
+  <div class="columns column is-8 is-centered" id="show-box">
+      <img id="show-page-image" class="column is-8" src=" <%= image %> " alt="<%= description %>"/>
+    <div class="column is-4">
+      <p id="poster-show"><strong>O </strong> USERNAME??  -------------- following</p>
+      <p id="show-page-description"> <%= description %></p>
       <div>
-        <p><%= comment.username %></p>
-        <form method="POST" action="/photos/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
-          <button>x</button>
+        <% comments.forEach(comment => { %>
+          <div class="columns is-multiline" style="padding: 1vh;">
+            <div class="column is-12 columns is-marginless is-paddingless">
+              <p class="column is-10 is-paddingless"><strong><%= comment.username %></strong></p>
+              <form class="column is-2 is-paddingless" method="POST" action="/photos/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
+                <button>x</button>
+              </form>
+            </div>
+            <div class="column is-12 is-paddingless">
+              <p id="comment-p"><%= comment.comment %></p>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+      <% if (locals.isLoggedIn) { %>
+        <div>
+          <form method="POST" action="/photos/<%= _id %>/comments">
+            <textarea name="comment"></textarea>
+            <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
+            <button>COMMENT</button>
+          </form>
+        </div>
+        <a href="/photos/<%= _id %>/edit"><button>EDIT</button></a>
+        <form action="/photos/<%= _id %>?_method=DELETE" method="post">
+          <button>DELETE</button>
         </form>
+        <% } %>
       </div>
-      <div>
-        <p><%= comment.comment %></p>
-      </div>
-    </div>
-  <% }) %>
+  </div>
+  <div class="column is-2"></div>
 </div>

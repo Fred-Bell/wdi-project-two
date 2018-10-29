@@ -1,6 +1,24 @@
-<h1>This will be the new page</h1>
-<form action="/photos" method="post">
-  <input type="text" name="image" placeholder="Image URL">
-  <input type="text" name="description" placeholder="description">
-  <button>POST</button>
-</form>
+<div class="columns is-centered">
+  <div class="column is-4"></div>
+  <div class="column is-4">
+    <form action="/photos" method="post">
+      <div class="field">
+        <label class="label">Image</label>
+        <div class="control">
+          <input class="input"type="text" name="image" placeholder="Image URL">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Description</label>
+        <div class="control">
+          <input  class="input" type="text" name="description" placeholder="Description">
+        </div>
+      </div>
+      <div class="field is-grouped is-grouped-centered">
+        <button class="button is-link" style="margin-right: 1vw;">POST</button>
+        <button class="button is-light" style="margin-left: 1vw;"><a href="javascript:history.back()">CANCEL</a></button>
+      </div>
+    </form>
+  </div>
+  <div class="column is-4"></div>
+</div>
