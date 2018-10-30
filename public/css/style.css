@@ -121,7 +121,7 @@ footer div a{
 }
 
 #comments-section{
-  max-height: 55vh;
+  max-height: 50vh;
   overflow: scroll;
   overflow-x: hidden;
   margin: 0 !important;

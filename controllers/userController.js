@@ -49,9 +49,14 @@ function unfollowProfileRoute(req, res) {
     .then(result => {
       result.following.id(req.params.id).remove();
       result.save()
-        .then(() => res.redirect(`/profile/${req.params.id}`));
+        .then(User.findById(req.params.id)
+          .then(user => {
+            user.followers = user.followers - 1;
+            user.save()
+              .then( () => res.redirect(`/profile/${req.params.id}`));
+          })
+        );
     });
-    //need to make this remove a follower
 }
 
 module.exports = {
