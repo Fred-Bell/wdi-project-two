@@ -35,5 +35,6 @@ router.delete('/photos/:photoId/comments/:commentId', secureRoute, commentContro
 
 router.get('/profile/:id', secureRoute, userController.showProfile);
 router.post('/profile/:id/follow', secureRoute, userController.followProfile);
+router.post('/profile/:id/unfollow', secureRoute, userController.unfollowProfile);
 
 module.exports = router;

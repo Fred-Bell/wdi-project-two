@@ -6,7 +6,6 @@ function showProfileRoute (req, res){
     .findById(req.params.id)
     .populate('addedPhotos')
     .then(result =>{
-      console.log(result._id + ' is the id of profile page ' + res.locals.currentUser.id + ' is the id of current user');
       res.render('users/profile', result);
     });
 }
@@ -15,7 +14,7 @@ function followProfileRoute (req, res){
   User
     .findById(res.locals.currentUser.id)
     .then(result => {
-      req.body.id = req.params.id;
+      req.body._id = req.params.id;
       result.following.push(req.body);
       console.log(result.username + ' is now following ' + req.body.username);
       result.save()
@@ -23,7 +22,18 @@ function followProfileRoute (req, res){
     });
 }
 
+function unfollowProfileRoute(req, res) {
+  User
+    .findById(res.locals.currentUser.id)
+    .then(result => {
+      result.following.id(req.params.id).remove();
+      result.save()
+        .then(() => res.redirect(`/profile/${req.params.id}`));
+    });
+}
+
 module.exports = {
   showProfile: showProfileRoute,
-  followProfile: followProfileRoute
+  followProfile: followProfileRoute,
+  unfollowProfile: unfollowProfileRoute
 };
