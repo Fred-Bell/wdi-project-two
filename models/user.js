@@ -7,7 +7,13 @@ const userSchema = mongoose.Schema({
   email: {type: String, unique: true},
   password: String,
   profilePicture: String,
-  bio: String
+  bio: String,
+  following: [
+    {
+      username: String,
+      id: String
+    }
+  ]
 });
 
 userSchema.virtual('addedPhotos', {
@@ -16,7 +22,7 @@ userSchema.virtual('addedPhotos', {
   foreignField: 'addedBy'
 });
 
-//need to create user pages add following and a feed of who you follow
+//need to add following and a feed of who you follow
 
 const userModel = mongoose.model('User', userSchema);
 

@@ -116,8 +116,8 @@ footer div a{
 }
 
 #show-page-image{
-  max-width: 40vw;
-  max-height: 80vh;
+  max-width: max-content;
+  max-height: max-content;
 }
 
 #comments-section{
