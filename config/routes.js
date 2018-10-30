@@ -34,6 +34,8 @@ router.post('/photos/:photoId/comments', secureRoute, commentController.create);
 router.delete('/photos/:photoId/comments/:commentId', secureRoute, commentController.delete);
 
 router.get('/profile/:id', secureRoute, userController.showProfile);
+router.get('/profile/:id/edit', secureRoute, userController.editProfile);
+router.put('/profile/:id', secureRoute, userController.updateProfile);
 router.post('/profile/:id/follow', secureRoute, userController.followProfile);
 router.post('/profile/:id/unfollow', secureRoute, userController.unfollowProfile);
 

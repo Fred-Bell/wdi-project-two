@@ -16,7 +16,8 @@ const userData = [
     email: 'fred@fred',
     password: 'pass',
     profilePicture: 'https://i.imgur.com/aIPiztH.jpg',
-    bio: 'I like to party'
+    bio: 'I like to party',
+    followers: 0
   },
   {
     name: 'George Green',
@@ -24,7 +25,8 @@ const userData = [
     email: 'g@g',
     password: 'pass',
     profilePicture: 'https://amp.businessinsider.com/images/5899ffcf6e09a897008b5c04-750-750.jpg',
-    bio: 'Business up front, party in the back'
+    bio: 'Business up front, party in the back',
+    followers: 0
   },
   {
     name: 'Alex Francis',
@@ -32,7 +34,8 @@ const userData = [
     email: 'alex@email',
     password: 'pass',
     profilePicture: 'https://media.licdn.com/dms/image/C4D03AQFEtVumC_yOng/profile-displayphoto-shrink_800_800/0?e=1546473600&v=beta&t=9kHlw44B4UBj9Nbw9vQROO12bd-menUbA-C631CJ49I',
-    bio: 'Student at GA'
+    bio: 'Student at GA',
+    followers: 0
   }
 ];
 

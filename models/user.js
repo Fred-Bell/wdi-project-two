@@ -11,9 +11,10 @@ const userSchema = mongoose.Schema({
   following: [
     {
       username: String,
-      id: String
+      _id: String
     }
-  ]
+  ],
+  followers: Number
 });
 
 userSchema.virtual('addedPhotos', {

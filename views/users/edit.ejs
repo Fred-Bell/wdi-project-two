@@ -1,0 +1,48 @@
+<div class="columns is-centered">
+  <div class="column is-4"></div>
+  <div class="column is-4">
+    <form action="/profile/<%= _id %>?_method=PUT" method="post">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input is-rounded"type="text" name="name" placeholder="Name" value="<%= name %>">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Username</label>
+        <div class="control">
+          <input  class="input is-rounded" type="text" name="description" placeholder="Username" value="<%= username %>">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input  class="input is-rounded" type="email" name="description" placeholder="Email" value="<%= email %>">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input  class="input is-rounded" type="password" name="description" placeholder="Password" value="<%= password %>">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Profile Picture URL</label>
+        <div class="control">
+          <input  class="input is-rounded" type="text" name="description" placeholder="Profile Picture URL" value="<%= profilePicture %>">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Bio</label>
+        <div class="control">
+          <textarea name="bio" rows="1" class="textarea"><%= bio %></textarea>
+        </div>
+      </div>
+      <div class="field is-grouped is-grouped-centered">
+        <button class="button is-rounded is-info" style="margin-right: 1vw;">UPDATE</button>
+        <button class="button is-rounded" style="margin-left: 1vw;"><a href="javascript:history.back()">CANCEL</a></button>
+      </div>
+    </form>
+  </div>
+  <div class="column is-4"></div>
+</div>
