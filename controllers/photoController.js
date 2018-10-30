@@ -14,6 +14,7 @@ function indexRoute(req, res) {
 function showRoute(req, res) {
   Photo
     .findById(req.params.id)
+    .populate('comments.addedBy addedBy')
     .then(result => {
       res.render('photos/show', result);
     });

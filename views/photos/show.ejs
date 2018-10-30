@@ -3,13 +3,19 @@
   <div class="columns column is-8 is-centered" id="show-box">
       <img id="show-page-image" class="column is-8" src=" <%= image %> " alt="<%= description %>"/>
     <div class="column is-4">
-      <p id="poster-show"><strong>O </strong> USERNAME??  -------------- following</p>
+      <div id="poster-show" class="columns">
+        <figure class="image is-64x64">
+          <img src="<%= addedBy.profilePicture %>" alt="profilePicture" class="is-rounded">
+        </figure>
+        <p class="column"><strong><%= addedBy.username %></strong></p>
+        <p class="column" >following</p>
+      </div>
       <div id="comments-section">
         <p id="show-page-description"> <%= description %></p>
         <% comments.forEach(comment => { %>
           <div class="columns is-multiline" style="padding: 1vh;">
             <div class="column is-12 columns is-marginless is-paddingless">
-              <p class="column is-10 is-paddingless"><strong><%= comment.username %></strong></p>
+              <p class="column is-10 is-paddingless"><strong><%= comment.addedBy.username %></strong></p>
               <form class="column is-2 is-paddingless" method="POST" action="/photos/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
                 <button>x</button>
               </form>
@@ -24,7 +30,7 @@
         <div>
           <form method="POST" action="/photos/<%= _id %>/comments">
             <input class="textarea is-small" rows= "1" name="comment" placeholder="Press enter to post a comment..."></input>
-            <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
+            <input name="addedBy" type="hidden" value="<%= locals.currentUser._id%>"/>
           </form>
         </div>
         <div class="columns">

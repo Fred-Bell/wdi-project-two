@@ -1,12 +1,11 @@
 main{
   margin-top: 9vh;
   padding-bottom: 4vh;
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(245, 245, 245);
 }
 
 /* nav bar  */
 .navbar{
-  border-bottom: 1px solid black;
   font-size: 25px;
   font-family: 'Oleo Script', cursive;
   padding-top: 1vh;
@@ -117,8 +116,8 @@ footer div a{
 }
 
 #show-page-image{
-  max-width: max-content;
-  max-height: max-content;
+  max-width: 40vw;
+  max-height: 80vh;
 }
 
 #comments-section{

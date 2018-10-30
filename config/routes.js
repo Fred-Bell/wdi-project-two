@@ -2,6 +2,7 @@ const router = require('express').Router();
 const photoController = require('../controllers/photoController');
 const authController = require('../controllers/authController');
 const commentController = require('../controllers/commentController');
+const userController = require('../controllers/userController');
 const secureRoute = require('../lib/secureRoute');
 
 router.get('/', (req, res) =>{
@@ -31,5 +32,7 @@ router.delete('/photos/:id', secureRoute, photoController.delete);
 
 router.post('/photos/:photoId/comments', secureRoute, commentController.create);
 router.delete('/photos/:photoId/comments/:commentId', secureRoute, commentController.delete);
+
+router.get('/profile/:id', secureRoute, userController.showProfile);
 
 module.exports = router;

@@ -14,6 +14,7 @@
           <input  class="input is-rounded" type="text" name="description" placeholder="Description">
         </div>
       </div>
+      <input type="hidden" name="addedBy" value="<%= locals.currentUser._id%>">
       <div class="field is-grouped is-grouped-centered">
         <button class="button is-link" style="margin-right: 1vw;">POST</button>
         <button class="button is-light" style="margin-left: 1vw;"><a href="javascript:history.back()">CANCEL</a></button>
