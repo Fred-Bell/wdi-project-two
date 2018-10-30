@@ -8,8 +8,7 @@ const photoSchema = mongoose.Schema({
   comments: [
     {
       comment: String,
-      addedBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
-      username: String
+      addedBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
       //Will add reply button, likes and time posted?
     }
   ]

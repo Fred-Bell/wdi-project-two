@@ -1,8 +1,51 @@
-<h1>This will be the registration page</h1>
-<form action="/register" method="post">
-  <input type="text" name="username" placeholder="USERNAME">
-  <input type="email" name="email" placeholder="EMAIL">
-  <input type="password" name="password" placeholder="PASSWORD">
-  <input type="text" name="profilePicture" placeholder="PROFILE PICTURE URL">
-  <button>REGISTER</button>
-</form>
+<div class="columns is-centered">
+  <div class="column is-4"></div>
+  <div class="column is-4">
+    <form action="/register" method="post">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input is-rounded" type="text" name="name" placeholder="Name">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Username</label>
+        <div class="control">
+          <input class="input is-rounded" type="text" name="username" placeholder="Username">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input is-rounded" type="email" name="email" placeholder="Email">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input class="input is-rounded" type="password" name="password" placeholder="Password">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Profile Picture URL</label>
+        <div class="control">
+          <input class="input is-rounded" type="text" name="profilePicture" placeholder="Profile Picture URL">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Bio</label>
+        <div class="control">
+          <textarea class="textarea" name="bio" rows="1" placeholder="Tell us about yourself"></textarea>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-4"></div>
+        <div class="column is-4">
+          <button class="button is-rounded is-info">REGISTER</button>
+        </div>
+        <div class="column is-4"></div>
+      </div>
+    </form>
+  </div>
+  <div class="column is-4"></div>
+</div>

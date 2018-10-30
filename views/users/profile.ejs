@@ -5,15 +5,24 @@
       <img class="is-rounded" src="<%= profilePicture %>" alt="profile picture">
     </figure>
     <div class="column is-9">
-      <h1 class="title"><%=username%></h1>
+      <h1 class="title"><%= username %></h1>
       <div class="columns">
-        <p class="column is-4"><strong>41</strong> posts</p>
+        <p class="column is-4"><strong><%= addedPhotos.length %></strong> posts</p>
         <p class="column is-4"><strong>1000</strong> followers</p>
         <p class="column is-4"><strong>587</strong> following</p>
       </div>
-      <p><strong>NAME HERE</strong></p>
-      <p>bio would go here. bla bla bla bla</p>
+      <p><strong><%= name %></strong></p>
+      <p><%= bio %></p>
     </div>
   </div>
   <div class="column is-3.5"></div>
+</div>
+<div class="postbox">
+  <% addedPhotos.forEach(photo => { %>
+    <div class="post">
+      <a href="/photos/<%= photo._id %>" >
+        <img src=" <%= photo.image %> " alt="<%= photo.description %>" />
+      </a>
+    </div>
+  <% }) %>
 </div>

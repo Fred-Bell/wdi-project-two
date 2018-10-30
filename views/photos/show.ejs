@@ -7,7 +7,7 @@
         <figure class="image is-64x64">
           <img src="<%= addedBy.profilePicture %>" alt="profilePicture" class="is-rounded">
         </figure>
-        <p class="column"><strong><%= addedBy.username %></strong></p>
+        <p class="column"><a href="/profile/<%= addedBy._id%>"><strong><%= addedBy.username %></strong></a></p>
         <p class="column" >following</p>
       </div>
       <div id="comments-section">

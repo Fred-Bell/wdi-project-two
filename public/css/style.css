@@ -58,15 +58,15 @@ main{
   margin-bottom: 1vh;
 }
 
-/* explore page  */
-.explore{
+/* photo sections  */
+.postbox{
   width: 81vw;
   display: flex;
   flex-wrap: wrap;
   margin-left: 9vw;
 }
 
-.explore:hover img{
+.postbox:hover img{
   opacity: 1;
 }
 
