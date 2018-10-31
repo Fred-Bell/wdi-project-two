@@ -7,14 +7,16 @@
       <% following.forEach(profile => {%>
           <% profile.addedPhotos.forEach(photo => { %>
             <div class="columns is-multiline" style="background-color: white; margin: 3vh 0;">
-              <div class="columns column is-12">
-                <div class="column is-3">
+              <div class="columns column is-12 is-marginless is-paddingless">
+                <div class="column is-2 is-paddingless">
                   <figure class="image is-64x64">
                     <img class="is-rounded" src="<%= profile.profilePicture %>" alt="Profile Picture">
                   </figure>
                 </div>
-                <div class="column is-9">
-                  <%= profile.username %>
+                <div class="column is-10 is-paddingless">
+                  <a href="/profile/<%= profile._id %>">
+                    <p class="title"><%= profile.username %></p>
+                  </a>
                 </div>
               </div>
               <div class="column is-12">
@@ -25,7 +27,16 @@
                 </div>
               </div>
               <div class="column is-12">
-                <%# comments go here %>
+                <% photo.comments.forEach(comment => { %>
+                  <div class="columns is-multiline" style="padding: 1vh;">
+                    <div class="column is-12 columns is-marginless is-paddingless">
+                      <p class="column is-12 is-paddingless"><strong><%= comment.addedBy.username %></strong></p>
+                    </div>
+                    <div class="column is-12 is-paddingless">
+                      <p id="comment-p"><%= comment.comment %></p>
+                    </div>
+                  </div>
+                <% }) %>
               </div>
             </div>
           <% }) %>

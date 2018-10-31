@@ -4,7 +4,7 @@ function homePageRoute (req, res){
   if (res.locals.isLoggedIn){
     User
       .find()
-      .populate('addedPhotos')
+      .populate('addedPhotos addedPhotos.comments.addedBy')
       .then(users => {
         const followingUsers = [];
         users.forEach(function(user){
