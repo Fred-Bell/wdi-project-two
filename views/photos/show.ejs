@@ -8,7 +8,6 @@
           <img src="<%= addedBy.profilePicture %>" alt="profilePicture" class="is-rounded">
         </figure>
         <p class="column"><a href="/profile/<%= addedBy._id%>"><strong><%= addedBy.username %></strong></a></p>
-        <p class="column" >following</p>
       </div>
       <div id="comments-section">
         <p id="show-page-description"> <%= description %></p>
@@ -26,13 +25,13 @@
           </div>
         <% }) %>
       </div>
-      <% if (locals.isLoggedIn) { %>
         <div>
           <form method="POST" action="/photos/<%= _id %>/comments">
             <input class="textarea is-small" rows= "1" name="comment" placeholder="Press enter to post a comment..."></input>
             <input name="addedBy" type="hidden" value="<%= locals.currentUser._id%>"/>
           </form>
         </div>
+        <% if (locals.isLoggedIn) { %>
         <div class="columns">
           <a class="column is-2" href="/photos/<%= _id %>/edit"><button>EDIT</button></a>
           <form class="column" action="/photos/<%= _id %>?_method=DELETE" method="post">

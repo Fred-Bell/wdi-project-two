@@ -4,41 +4,50 @@
     <div class="columns column is-7 is-multiline">
       <div class="column is-2"></div>
       <div class="columns column is-8 is-multiline">
-      <% following.forEach(photo => {%>
-            <div class="columns is-multiline" style="background-color: white; margin: 3vh 0;">
-              <div class="columns column is-12 is-marginless is-paddingless">
-                <div class="column is-2 is-paddingless">
-                  <figure class="image is-64x64">
-                    <img class="is-rounded" src="<%= photo.addedBy.profilePicture %>" alt="Profile Picture">
-                  </figure>
-                </div>
-                <div class="column is-10 is-paddingless">
-                  <a href="/profile/<%= photo.addedBy._id %>">
-                    <p class="title"><%= photo.addedBy.username %></p>
-                  </a>
-                </div>
+        <% following.forEach(photo => {%>
+          <div class="columns is-multiline" id="picture-container">
+            <div class="columns column is-12 is-marginless is-paddingless">
+              <div class="column is-2 is-paddingless">
+                <figure class="image is-64x64">
+                  <img class="is-rounded" src="<%= photo.addedBy.profilePicture %>" alt="Profile Picture">
+                </figure>
               </div>
-              <div class="column is-12">
-                <div class="picture">
-                  <a href="/photos/<%= photo._id %>" >
-                    <img src=" <%= photo.image %> " alt="<%= photo.description %>" />
-                  </a>
-                </div>
-              </div>
-              <div class="column is-12">
-                <% photo.comments.forEach(comment => { %>
-                  <div class="columns is-multiline" style="padding: 1vh;">
-                    <div class="column is-12 columns is-marginless is-paddingless">
-                      <p class="column is-12 is-paddingless"><strong><%= comment.addedBy.username %></strong></p>
-                    </div>
-                    <div class="column is-12 is-paddingless">
-                      <p id="comment-p"><%= comment.comment %></p>
-                    </div>
-                  </div>
-                <% }) %>
+              <div class="column is-10 is-paddingless">
+                <a href="/profile/<%= photo.addedBy._id %>">
+                  <p class="title"><%= photo.addedBy.username %></p>
+                </a>
               </div>
             </div>
-          <% }) %>
+            <div class="column is-12">
+              <div class="picture">
+                <a href="/photos/<%= photo._id %>" >
+                  <img src=" <%= photo.image %> " alt="<%= photo.description %>" />
+                </a>
+              </div>
+            </div>
+            <div class="column is-12">
+              <p><strong><%=photo.addedBy.username%></strong> - <%= photo.description %></p>
+            </div>
+            <div class="column is-12" id="comment-container">
+              <% photo.comments.forEach(comment => { %>
+                <div class="columns is-multiline" style="padding: 1vh;">
+                  <div class="column is-12 columns is-marginless is-paddingless">
+                    <p class="column is-12 is-paddingless"><strong><%= comment.addedBy.username %></strong></p>
+                  </div>
+                  <div class="column is-12 is-paddingless">
+                    <p id="comment-p"><%= comment.comment %></p>
+                  </div>
+                </div>
+              <% }) %>
+            </div>
+          <div class="column is-12">
+            <form method="POST" action="/feed/<%= photo._id %>/comments">
+              <input class="textarea is-small" rows= "1" name="comment" placeholder="Press enter to post a comment..."></input>
+              <input name="addedBy" type="hidden" value="<%= locals.currentUser._id%>"/>
+            </form>
+          </div>
+        </div>
+        <% }) %>
       </div>
       <div class="column is-2"></div>
     </div>
@@ -51,5 +60,11 @@
     <div class="column is-1"></div>
   </div>
 <% } else { %>
-  <p>Log in to get full access to this app</p>
+  <div class="columns">
+    <div class="column is-4"></div>
+    <div class="column is-6">
+      <p class="title">Log in to get full access to this app</p>
+    </div>
+    <div class="column is-2"></div>
+  </div>
 <% }%>

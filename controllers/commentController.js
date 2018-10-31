@@ -19,7 +19,18 @@ function deleteRoute(req, res) {
     });
 }
 
+function feedCreateRoute (req, res){
+  Photo
+    .findById(req.params.photoId)
+    .then(result => {
+      result.comments.push(req.body);
+      result.save()
+        .then( () => res.redirect('/'));
+    });
+}
+
 module.exports = {
   create: createRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  feedCreate: feedCreateRoute
 };

@@ -30,6 +30,7 @@ router.delete('/photos/:id', secureRoute, photoController.delete);
 
 router.post('/photos/:photoId/comments', secureRoute, commentController.create);
 router.delete('/photos/:photoId/comments/:commentId', secureRoute, commentController.delete);
+router.post('/feed/:photoId/comments', secureRoute, commentController.feedCreate);
 
 router.get('/profile/:id', secureRoute, userController.showProfile);
 router.get('/profile/:id/edit', secureRoute, userController.editProfile);
