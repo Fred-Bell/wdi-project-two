@@ -1,22 +1,23 @@
 const User = require('../models/user');
+const Photo = require('../models/photo');
 
 function homePageRoute (req, res){
   if (res.locals.isLoggedIn){
-    User
+    Photo
       .find()
-      .populate('addedPhotos addedPhotos.comments.addedBy')
-      .then(users => {
-        const followingUsers = [];
-        users.forEach(function(user){
+      .populate('addedBy comments.addedBy')
+      .then(photos => {
+        const followingPhotos = [];
+        photos.forEach(function(photo){
           for (let i = 0; i < res.locals.currentUser.following.length; i++){
-            if((res.locals.currentUser.following[i]._id).toString() === (user._id).toString()){
-              followingUsers.push(user);
+            if((res.locals.currentUser.following[i]._id).toString() === (photo.addedBy._id).toString()){
+              followingPhotos.push(photo);
             }
           }
         });
-        console.log(followingUsers);
+        console.log(followingPhotos);
         const followingObject = {
-          following: followingUsers
+          following: followingPhotos
         };
         res.render('pages/home', followingObject);
       });
