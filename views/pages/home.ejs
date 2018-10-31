@@ -1,7 +1,7 @@
 <% if (locals.isLoggedIn) { %>
   <div class="columns">
     <div class="column is-2"></div>
-    <div class="columns column is-6 is-multiline">
+    <div class="columns column is-7 is-multiline">
       <div class="column is-2"></div>
       <div class="columns column is-8 is-multiline">
       <% following.forEach(profile => {%>
@@ -9,7 +9,7 @@
             <div class="columns is-multiline" style="background-color: white; margin: 3vh 0;">
               <div class="columns column is-12">
                 <div class="column is-3">
-                  <figure class="image is-96x96">
+                  <figure class="image is-64x64">
                     <img class="is-rounded" src="<%= profile.profilePicture %>" alt="Profile Picture">
                   </figure>
                 </div>
@@ -18,12 +18,14 @@
                 </div>
               </div>
               <div class="column is-12">
-                <a href="/photos/<%= photo._id %>" >
-                  <img src=" <%= photo.image %> " alt="<%= photo.description %>" />
-                </a>
+                <div class="picture">
+                  <a href="/photos/<%= photo._id %>" >
+                    <img src=" <%= photo.image %> " alt="<%= photo.description %>" />
+                  </a>
+                </div>
               </div>
               <div class="column is-12">
-
+                <%# comments go here %>
               </div>
             </div>
           <% }) %>
@@ -31,7 +33,7 @@
       </div>
       <div class="column is-2"></div>
     </div>
-    <div class="column is-3">
+    <div class="column is-2">
       <figure class="image">
         <img class="is-rounded" src="<%= locals.currentUser.profilePicture%>" alt="Profile Picture">
       </figure>

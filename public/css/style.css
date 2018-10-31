@@ -87,6 +87,19 @@ main{
   opacity: 0.5;
 }
 
+/* feed page  */
+.picture{
+  background: black;
+}
+
+.picture img{
+  width: 36vw;
+  transition: opacity 0.6s;
+}
+
+.picture img:hover{
+  opacity: 0.5;
+}
 
 /*  footer */
 footer{
