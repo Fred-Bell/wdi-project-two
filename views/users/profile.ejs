@@ -41,6 +41,15 @@
   </div>
   <div class="column is-3.5"></div>
 </div>
+<% if (addedPhotos.length === 0){ %>
+  <div class="columns">
+    <div class="column is-5"></div>
+    <div class="column is-2">
+      <p class="title">No Posts Yet</p>
+    </div>
+    <div class="column is-5"></div>
+  </div>
+  <% } %>
 <div class="postbox">
   <% addedPhotos.forEach(photo => { %>
     <div class="post">

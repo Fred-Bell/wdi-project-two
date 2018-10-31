@@ -9,12 +9,12 @@
             <div class="columns column is-12 is-marginless is-paddingless">
               <div class="column is-2 is-paddingless">
                 <figure class="image is-64x64">
-                  <img class="is-rounded" src="<%= photo.addedBy.profilePicture %>" alt="Profile Picture">
+                  <img class="is-rounded profile-icon" src="<%= photo.addedBy.profilePicture %>" alt="Profile Picture">
                 </figure>
               </div>
               <div class="column is-10 is-paddingless">
                 <a href="/profile/<%= photo.addedBy._id %>">
-                  <p class="title"><%= photo.addedBy.username %></p>
+                  <p class="title" id="picture-title"><%= photo.addedBy.username %></p>
                 </a>
               </div>
             </div>
@@ -55,7 +55,7 @@
       <figure class="image">
         <img class="is-rounded" src="<%= locals.currentUser.profilePicture%>" alt="Profile Picture">
       </figure>
-      <p class="title">Welcome back <%= locals.currentUser.username %></p>
+      <p class="title center-text">Welcome back <%= locals.currentUser.name %></p>
     </div>
     <div class="column is-1"></div>
   </div>

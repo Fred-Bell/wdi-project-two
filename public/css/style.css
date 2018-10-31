@@ -4,6 +4,10 @@ main{
   background-color: rgb(245, 245, 245);
 }
 
+a{
+  color: black;
+}
+
 /* nav bar  */
 .navbar{
   font-size: 25px;
@@ -114,6 +118,19 @@ main{
 }
 
 /* feed page  */
+
+.center-text{
+  text-align: center;
+}
+
+#picture-title{
+  margin-top: 2vh;
+}
+
+.profile-icon{
+  margin: 0.5vh 0 0.5vh 0.5vw;
+}
+
 .picture{
   background: black;
 }
@@ -130,6 +147,8 @@ main{
 #picture-container{
   background-color: white;
   margin: 3vh 0;
+  padding: 1vh;
+  border-radius: 2.5%;
 }
 
 #comment-container{
@@ -150,6 +169,10 @@ footer div a{
 }
 
 /*  show page */
+#poster-title{
+  margin-top: 1vh;
+}
+
 #show-box{
   border: solid 1px lightgrey;
   background-color: white;
@@ -158,6 +181,7 @@ footer div a{
 
 #poster-show{
   border-bottom: 1px solid lightgrey;
+  padding-bottom: 1vh;
 }
 
 #show-page-description{
