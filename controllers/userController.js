@@ -1,5 +1,29 @@
 const User = require('../models/user');
 
+function homePageRoute (req, res){
+  if (res.locals.isLoggedIn){
+    User
+      .find()
+      .populate('addedPhotos')
+      .then(users => {
+        const followingUsers = [];
+        users.forEach(function(user){
+          for (let i = 0; i < res.locals.currentUser.following.length; i++){
+            if((res.locals.currentUser.following[i]._id).toString() === (user._id).toString()){
+              followingUsers.push(user);
+            }
+          }
+        });
+        console.log(followingUsers);
+        const followingObject = {
+          following: followingUsers
+        };
+        res.render('pages/home', followingObject);
+      });
+  } else {
+    res.render('pages/home');
+  }
+}
 
 function showProfileRoute (req, res){
   User
@@ -60,6 +84,7 @@ function unfollowProfileRoute(req, res) {
 }
 
 module.exports = {
+  homePage: homePageRoute,
   showProfile: showProfileRoute,
   editProfile: editProfileRoute,
   updateProfile: updateProfileRoute,

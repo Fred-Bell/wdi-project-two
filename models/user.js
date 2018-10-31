@@ -23,7 +23,7 @@ userSchema.virtual('addedPhotos', {
   foreignField: 'addedBy'
 });
 
-//need to add following and a feed of who you follow
+//need to add a feed of who you follow
 
 const userModel = mongoose.model('User', userSchema);
 

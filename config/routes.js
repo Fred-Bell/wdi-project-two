@@ -5,9 +5,7 @@ const commentController = require('../controllers/commentController');
 const userController = require('../controllers/userController');
 const secureRoute = require('../lib/secureRoute');
 
-router.get('/', (req, res) =>{
-  res.render('pages/home');
-});
+router.get('/', userController.homePage);
 
 router.get('/about', (req, res) =>{
   res.render('pages/about');
