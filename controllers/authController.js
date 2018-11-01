@@ -11,11 +11,15 @@ function invalidRegistrationRoute (req, res){
 function registerRoute (req, res) {
   User
     .create(req.body)
+    .catch(err => {
+      if (err.code === 11000){
+        res.redirect('/invalidregistration');
+      }
+    })
     .then(result => {
       console.log('user created', result);
       res.redirect('/login');
-    })
-    .catch( res.redirect('/invalidregistration'));
+    });
 }
 
 function loginFormRoute (req, res) {

@@ -18,7 +18,6 @@ function homePageRoute (req, res){
             followingPhotos.push(photo);
           }
         });
-        console.log(followingPhotos);
         const followingObject = {
           following: followingPhotos
         };

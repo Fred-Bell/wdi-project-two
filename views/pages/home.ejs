@@ -4,6 +4,9 @@
     <div class="columns column is-7 is-multiline">
       <div class="column is-2"></div>
       <div class="columns column is-8 is-multiline">
+        <% if (following.length === 0){ %>
+          <h1 class="title center-text">Click the compass to find someone to follow</h1>
+        <% } %>
         <% following.forEach(photo => {%>
           <div class="columns is-multiline" id="picture-container">
             <div class="columns column is-12 is-marginless is-paddingless">
@@ -64,7 +67,7 @@
     <div class="column"></div>
     <div class="column welcome">
       <p class="title">Welcome to Fredstagram</p>
-      <p class="title is-4">Log in to get full access to this app</p>
+      <p class="title is-4">Log in to get access to this app</p>
     </div>
     <div class="column"></div>
   </div>
