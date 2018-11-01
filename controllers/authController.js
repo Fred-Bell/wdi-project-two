@@ -4,18 +4,30 @@ function registerFormRoute (req, res) {
   res.render('auth/register');
 }
 
+function invalidRegistrationRoute (req, res){
+  res.render('auth/invalidReg');
+}
+
 function registerRoute (req, res) {
   User
     .create(req.body)
-    //need to fix what happens when registering duplicate email/username
     .then(result => {
       console.log('user created', result);
       res.redirect('/login');
-    });
+    })
+    .catch( res.redirect('/invalidregistration'));
 }
 
-function loginFormRoute(req, res) {
+function loginFormRoute (req, res) {
   res.render('auth/login');
+}
+
+function invalidLoginRoute (req, res){
+  res.render('auth/invalidLogin');
+}
+
+function invalidPasswordRoute (req, res){
+  res.render('auth/invalidPassword');
 }
 
 function loginRoute (req, res) {
@@ -23,13 +35,14 @@ function loginRoute (req, res) {
   User.findOne({ email: req.body.email })
     .then(result => {
       if (!result) {
-        res.redirect('/register');
+        res.redirect('/invalidlogin');
+      } else if (req.body.password !== result.password) {
+        res.redirect('/invalidpassword');
       } else {
         req.session.userId = result._id;
         res.redirect('/');
       }
     });
-  // learn to validate the password!!!!
 }
 
 function logoutRoute(req, res) {
@@ -41,8 +54,11 @@ function logoutRoute(req, res) {
 
 module.exports = {
   registerForm: registerFormRoute,
+  invalidReg: invalidRegistrationRoute,
   register: registerRoute,
   loginForm: loginFormRoute,
+  invalidLogin: invalidLoginRoute,
+  invalidPass: invalidPasswordRoute,
   login: loginRoute,
   logout: logoutRoute
 };

@@ -12,9 +12,12 @@ router.get('/about', (req, res) =>{
 });
 
 router.get('/register', authController.registerForm);
+router.get('/invalidregistration', authController.invalidReg);
 router.post('/register', authController.register);
 
 router.get('/login', authController.loginForm);
+router.get('/invalidlogin', authController.invalidLogin);
+router.get('/invalidpassword', authController.invalidPass);
 router.post('/login', authController.login);
 
 router.get('/logout', authController.logout);
