@@ -26,6 +26,10 @@
                 <a href="/photos/<%= photo._id %>" >
                   <img src=" <%= photo.image %> " alt="<%= photo.description %>" />
                 </a>
+                <div class="hover-box columns">
+                  <p class="column is-6"><i class="fas fa-heart"></i> <%= photo.numberOfLikes%></p>
+                  <p class="column is-6"><i class="fas fa-comment"></i> <%= photo.comments.length %></p>
+                </div>
               </div>
             </div>
             <% if (photo.likedBy.filter(id => id.toString() === locals.currentUser._id.toString()).length) {%>

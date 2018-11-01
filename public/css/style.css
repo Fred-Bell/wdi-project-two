@@ -164,6 +164,7 @@ a{
 
 .picture{
   background: black;
+  position: relative;
 }
 
 .picture img{
@@ -172,7 +173,7 @@ a{
 }
 
 .picture img:hover{
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 #picture-container{
@@ -188,6 +189,20 @@ a{
   overflow-x: hidden;
 }
 
+.hover-box{
+  z-index: 2;
+  position: absolute;
+  top: 40%;
+  color: white;
+  font-size: 40px;
+  left: 33%;
+  opacity: 0;
+  width: 40%;
+}
+
+.picture:hover .hover-box{
+  opacity: 1;
+}
 /*  footer */
 footer{
   padding-top: 3vh !important;
