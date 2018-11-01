@@ -33,13 +33,38 @@
             <input name="addedBy" type="hidden" value="<%= locals.currentUser._id%>"/>
           </form>
         </div>
+        <% if (likedBy.filter(id => id.toString() === locals.currentUser._id.toString()).length) {%>
+          <div class="columns">
+            <div class="column is-2">
+              <form class="" action="/photos/<%= _id %>/unlike" method="post">
+                <input type="hidden" name="likedBy" value="<%= locals.currentUser._id%>">
+                <button class="unlike-button"><i class="fas fa-heart"></i></button>
+              </form>
+            </div>
+            <div class="column is-10">
+              <p class="like-count"><%= numberOfLikes %> Likes</p>
+            </div>
+          </div>
+        <% } else { %>
+          <div class="columns">
+            <div class="column is-2">
+              <form class="" action="/photos/<%= _id %>/likes" method="post">
+                <input type="hidden" name="likedBy" value="<%= locals.currentUser._id%>">
+                <button class="like-button"><i class="far fa-heart"></i></button>
+              </form>
+            </div>
+            <div class="column is-10">
+              <p class="like-count"><%= numberOfLikes %> Likes</p>
+            </div>
+          </div>
+        <% } %>
         <% if ((locals.currentUser._id).toString() === (addedBy._id).toString() || locals.currentUser.admin === true) { %>
-        <div class="columns" style="margin-top: 0.5vh;">
-          <a class="column is-6" href="/photos/<%= _id %>/edit"><button class="button is-rounded" >EDIT POST</button></a>
-          <form class="column is-6" action="/photos/<%= _id %>?_method=DELETE" method="post">
-            <button class="button is-rounded">DELETE POST</button>
-          </form>
-        </div>
+          <div class="columns" style="margin-top: 0.5vh;">
+            <a class="column is-6" href="/photos/<%= _id %>/edit"><button class="button is-rounded" >EDIT POST</button></a>
+            <form class="column is-6" action="/photos/<%= _id %>?_method=DELETE" method="post">
+              <button class="button is-rounded">DELETE POST</button>
+            </form>
+          </div>
         <% } %>
       </div>
   </div>

@@ -52,6 +52,26 @@ function deleteRoute (req, res){
     .then(res.redirect('/photos'));
 }
 
+function likeRoute (req, res){
+  Photo
+    .findById(req.params.id)
+    .then(result => {
+      result.likedBy.push(req.body.likedBy);
+      result.save()
+        .then( () => res.redirect(`/photos/${req.params.id}`));
+    });
+}
+function unlikeRoute (req, res){
+  Photo
+    .findById(req.params.id)
+    .then(result => {
+      const index = result.likedBy.indexOf(res.locals.currentUser.id);
+      result.likedBy.splice(index, 1);
+      result.save()
+        .then( () => res.redirect(`/photos/${req.params.id}`));
+    });
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
@@ -59,5 +79,7 @@ module.exports = {
   create: createRoute,
   edit: editRoute,
   update: updateRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  like: likeRoute,
+  unlike: unlikeRoute
 };

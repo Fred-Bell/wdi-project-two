@@ -31,6 +31,9 @@ router.get('/photos/:id/edit', secureRoute, photoController.edit);
 router.put('/photos/:id', secureRoute, photoController.update);
 router.delete('/photos/:id', secureRoute, photoController.delete);
 
+router.post('/photos/:id/likes', secureRoute, photoController.like);
+router.post('/photos/:id/unlike', secureRoute, photoController.unlike);
+
 router.post('/photos/:photoId/comments', secureRoute, commentController.create);
 router.delete('/photos/:photoId/comments/:commentId', secureRoute, commentController.delete);
 router.post('/feed/:photoId/comments', secureRoute, commentController.feedCreate);

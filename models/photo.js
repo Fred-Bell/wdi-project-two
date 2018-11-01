@@ -9,10 +9,22 @@ const photoSchema = mongoose.Schema({
     {
       comment: String,
       addedBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
-      //Will add reply button, likes and time posted?
+      //Will add likes and time posted?
     }
+  ],
+  likedBy: [
+    { type: mongoose.Schema.ObjectId, ref: 'User' }
   ]
   // Will add likes and time/date(how old post is)
+});
+
+photoSchema.virtual('numberOfLikes')
+  .get(function() {
+    return this.likedBy.length;
+  });
+
+photoSchema.set('toJSON', {
+  virtuals: true
 });
 
 

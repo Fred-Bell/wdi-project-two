@@ -24,8 +24,6 @@ userSchema.virtual('addedPhotos', {
   foreignField: 'addedBy'
 });
 
-//need to add a feed of who you follow
-
 const userModel = mongoose.model('User', userSchema);
 
 module.exports = userModel;

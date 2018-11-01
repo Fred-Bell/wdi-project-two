@@ -8,6 +8,23 @@ a{
   color: black;
 }
 
+.like-button{
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+}
+
+.unlike-button{
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  color: red;
+}
+
+.like-count{
+  font-size: 20px;
+}
+
 /* home page */
 .welcome{
   text-align: center;
@@ -200,7 +217,7 @@ footer div a{
 }
 
 #comments-section{
-  max-height: 50vh;
+  max-height: 35vh;
   overflow: scroll;
   overflow-x: hidden;
   margin: 0 !important;
