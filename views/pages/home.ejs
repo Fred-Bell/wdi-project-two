@@ -37,7 +37,7 @@
                   </form>
                 </div>
                 <div class="column is-11">
-                  <p class="like-count"><%= photo.numberOfLikes %> Likes</p>
+                  <p class="like-count"><%= photo.numberOfLikes %> <% if(parseInt(photo.numberOfLikes) === 1){%> Like <%} else { %> Likes <% } %></p>
                 </div>
               </div>
             <% } else { %>
@@ -49,7 +49,7 @@
                   </form>
                 </div>
                 <div class="column is-11">
-                  <p class="like-count"><%= photo.numberOfLikes %> Likes</p>
+                  <p class="like-count"><%= photo.numberOfLikes %> <% if(parseInt(photo.numberOfLikes) === 1){%> Like <%} else { %> Likes <% } %></p>
                 </div>
               </div>
             <% } %>

@@ -42,7 +42,7 @@
               </form>
             </div>
             <div class="column is-10">
-              <p class="like-count"><%= numberOfLikes %> Likes</p>
+              <p class="like-count"><%= numberOfLikes %> <% if(parseInt(numberOfLikes) === 1){%> Like <%} else { %> Likes <% } %></p>
             </div>
           </div>
         <% } else { %>
@@ -54,7 +54,7 @@
               </form>
             </div>
             <div class="column is-10">
-              <p class="like-count"><%= numberOfLikes %> Likes</p>
+              <p class="like-count"><%= numberOfLikes %> <% if(parseInt(numberOfLikes) === 1){%> Like <%} else { %> Likes <% } %></p>
             </div>
           </div>
         <% } %>
