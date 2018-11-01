@@ -10,8 +10,7 @@ function registerRoute (req, res) {
     //need to fix what happens when registering duplicate email/username
     .then(result => {
       console.log('user created', result);
-      res.redirect('/');
-      //should maybe change this to login page or if already in maybe to feed
+      res.redirect('/login');
     });
 }
 

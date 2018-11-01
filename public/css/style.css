@@ -8,9 +8,9 @@ a{
   color: black;
 }
 
-.comment{
-  padding: 1vh;
-  border-top: 0.5px solid lightgrey;
+/* home page */
+.welcome{
+  text-align: center;
 }
 
 /* nav bar  */
@@ -210,4 +210,9 @@ footer div a{
 #comment-p{
   width: 100%;
   word-break: break-all;
+}
+
+.comment{
+  padding: 1vh;
+  border-top: 0.5px solid lightgrey;
 }
