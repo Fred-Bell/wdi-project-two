@@ -14,6 +14,7 @@ const userData = [
     name: 'Freddie Bell',
     username: 'freddie_.bell',
     email: 'fred@fred',
+    admin: true,
     password: 'pass',
     profilePicture: 'https://i.imgur.com/aIPiztH.jpg',
     bio: 'I like to party',
