@@ -12,12 +12,14 @@
       <div id="comments-section">
         <p id="show-page-description"> <%= description %></p>
         <% comments.forEach(comment => { %>
-          <div class="columns is-multiline" style="padding: 1vh;">
+          <div class="columns is-multiline comment">
             <div class="column is-12 columns is-marginless is-paddingless">
               <p class="column is-10 is-paddingless"><strong><%= comment.addedBy.username %></strong></p>
+              <% if ((locals.currentUser._id).toString() === (comment.addedBy._id).toString()) { %>
               <form class="column is-2 is-paddingless" method="POST" action="/photos/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
                 <button>x</button>
               </form>
+              <% } %>
             </div>
             <div class="column is-12 is-paddingless">
               <p id="comment-p"><%= comment.comment %></p>
@@ -31,11 +33,11 @@
             <input name="addedBy" type="hidden" value="<%= locals.currentUser._id%>"/>
           </form>
         </div>
-        <% if (locals.isLoggedIn) { %>
-        <div class="columns">
-          <a class="column is-2" href="/photos/<%= _id %>/edit"><button>EDIT</button></a>
-          <form class="column" action="/photos/<%= _id %>?_method=DELETE" method="post">
-            <button>DELETE</button>
+        <% if ((locals.currentUser._id).toString() === (addedBy._id).toString()) { %>
+        <div class="columns" style="margin-top: 0.5vh;">
+          <a class="column is-6" href="/photos/<%= _id %>/edit"><button class="button is-rounded" >EDIT POST</button></a>
+          <form class="column is-6" action="/photos/<%= _id %>?_method=DELETE" method="post">
+            <button class="button is-rounded">DELETE POST</button>
           </form>
         </div>
         <% } %>

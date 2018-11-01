@@ -47,6 +47,16 @@ User
       .create([
         {
           description: 'blablabla',
+          image: 'https://i.imgur.com/3lPX9om.jpg',
+          addedBy: users[0]
+        },
+        {
+          description: 'blablabla',
+          image: 'https://i.imgur.com/OhZSjqe.jpg',
+          addedBy: users[0]
+        },
+        {
+          description: 'blablabla',
           image: 'https://pbs.twimg.com/media/DqnKWFxWkAAuHiV.jpg',
           addedBy: users[0]
         },

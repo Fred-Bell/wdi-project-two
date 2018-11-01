@@ -8,6 +8,11 @@ a{
   color: black;
 }
 
+.comment{
+  padding: 1vh;
+  border-top: 0.5px solid lightgrey;
+}
+
 /* nav bar  */
 .navbar{
   font-size: 25px;
