@@ -19,6 +19,7 @@ a{
   border: none;
   font-size: 25px;
   color: red;
+  opacity: 0.7;
 }
 
 .like-count{

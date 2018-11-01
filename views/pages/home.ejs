@@ -28,6 +28,31 @@
                 </a>
               </div>
             </div>
+            <% if (photo.likedBy.filter(id => id.toString() === locals.currentUser._id.toString()).length) {%>
+              <div class="columns column is-12">
+                <div class="column is-1">
+                  <form class="" action="/feed/<%= photo._id %>/unlike" method="post">
+                    <input type="hidden" name="likedBy" value="<%= locals.currentUser._id%>">
+                    <button class="unlike-button"><i class="fas fa-heart"></i></button>
+                  </form>
+                </div>
+                <div class="column is-11">
+                  <p class="like-count"><%= photo.numberOfLikes %> Likes</p>
+                </div>
+              </div>
+            <% } else { %>
+              <div class="columns column is-12">
+                <div class="column is-1">
+                  <form class="" action="/feed/<%= photo._id %>/likes" method="post">
+                    <input type="hidden" name="likedBy" value="<%= locals.currentUser._id%>">
+                    <button class="like-button"><i class="far fa-heart"></i></button>
+                  </form>
+                </div>
+                <div class="column is-11">
+                  <p class="like-count"><%= photo.numberOfLikes %> Likes</p>
+                </div>
+              </div>
+            <% } %>
             <div class="column is-12">
               <p><strong><%=photo.addedBy.username%></strong> - <%= photo.description %></p>
             </div>

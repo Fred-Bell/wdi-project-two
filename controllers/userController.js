@@ -5,6 +5,7 @@ function homePageRoute (req, res){
   if (res.locals.isLoggedIn){
     Photo
       .find()
+      .sort({ 'image': -1 })
       .populate('addedBy comments.addedBy')
       .then(photos => {
         const followingPhotos = [];

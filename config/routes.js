@@ -33,6 +33,8 @@ router.delete('/photos/:id', secureRoute, photoController.delete);
 
 router.post('/photos/:id/likes', secureRoute, photoController.like);
 router.post('/photos/:id/unlike', secureRoute, photoController.unlike);
+router.post('/feed/:id/likes', secureRoute, photoController.feedLike);
+router.post('/feed/:id/unlike', secureRoute, photoController.feedUnlike);
 
 router.post('/photos/:photoId/comments', secureRoute, commentController.create);
 router.delete('/photos/:photoId/comments/:commentId', secureRoute, commentController.delete);

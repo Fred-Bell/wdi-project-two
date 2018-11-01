@@ -61,6 +61,7 @@ function likeRoute (req, res){
         .then( () => res.redirect(`/photos/${req.params.id}`));
     });
 }
+
 function unlikeRoute (req, res){
   Photo
     .findById(req.params.id)
@@ -69,6 +70,29 @@ function unlikeRoute (req, res){
       result.likedBy.splice(index, 1);
       result.save()
         .then( () => res.redirect(`/photos/${req.params.id}`));
+    });
+}
+
+function feedLikeRoute (req, res){
+  Photo
+    .findById(req.params.id)
+    .then(result => {
+      result.likedBy.push(req.body.likedBy);
+      result.save()
+        .then( () => res.redirect('/'));
+    });
+}
+
+function feedUnlikeRoute (req, res){
+  Photo
+    .findById(req.params.id)
+    .then(result => {
+      const index = result.likedBy.indexOf(res.locals.currentUser.id);
+      result.likedBy.splice(index, 1);
+      result.save()
+        .then( () => {
+          res.redirect('/');
+        });
     });
 }
 
@@ -81,5 +105,7 @@ module.exports = {
   update: updateRoute,
   delete: deleteRoute,
   like: likeRoute,
-  unlike: unlikeRoute
+  unlike: unlikeRoute,
+  feedLike: feedLikeRoute,
+  feedUnlike: feedUnlikeRoute
 };
