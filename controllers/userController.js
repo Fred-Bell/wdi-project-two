@@ -14,6 +14,9 @@ function homePageRoute (req, res){
               followingPhotos.push(photo);
             }
           }
+          if((res.locals.currentUser._id).toString() === (photo.addedBy._id).toString()){
+            followingPhotos.push(photo);
+          }
         });
         console.log(followingPhotos);
         const followingObject = {
@@ -56,7 +59,6 @@ function followProfileRoute (req, res){
     .then(result => {
       req.body._id = req.params.id;
       result.following.push(req.body);
-      console.log(result.username + ' is now following ' + req.body.username);
       result.save()
         .then(User.findById(req.params.id)
           .then(user => {
