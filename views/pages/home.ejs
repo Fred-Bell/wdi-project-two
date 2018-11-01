@@ -33,7 +33,7 @@
               </div>
             </div>
             <% if (photo.likedBy.filter(id => id.toString() === locals.currentUser._id.toString()).length) {%>
-              <div class="columns column is-12">
+              <div class="columns column is-12 is-marginless is-paddingless">
                 <div class="column is-1">
                   <form class="" action="/feed/<%= photo._id %>/unlike" method="post">
                     <input type="hidden" name="likedBy" value="<%= locals.currentUser._id%>">
@@ -45,7 +45,7 @@
                 </div>
               </div>
             <% } else { %>
-              <div class="columns column is-12">
+              <div class="columns column is-12 is-marginless is-paddingless">
                 <div class="column is-1">
                   <form class="" action="/feed/<%= photo._id %>/likes" method="post">
                     <input type="hidden" name="likedBy" value="<%= locals.currentUser._id%>">
@@ -57,8 +57,8 @@
                 </div>
               </div>
             <% } %>
-            <div class="column is-12">
-              <p><strong><%=photo.addedBy.username%></strong> - <%= photo.description %></p>
+            <div class="column is-12 is-marginless is-paddingless">
+              <p class="picture-by"><strong><%=photo.addedBy.username%></strong> - <%= photo.description %></p>
             </div>
             <div class="column is-12" id="comment-container">
               <% photo.comments.forEach(comment => { %>

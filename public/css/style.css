@@ -150,6 +150,10 @@ a{
 
 /* feed page  */
 
+.picture-by{
+  padding-left: 1.5%;
+}
+
 .center-text{
   text-align: center;
 }
@@ -198,10 +202,15 @@ a{
   left: 33%;
   opacity: 0;
   width: 40%;
+  transition: opacity 0.6s;
 }
 
 .picture:hover .hover-box{
   opacity: 1;
+}
+
+.hover-box:hover{
+  color: transparent;
 }
 /*  footer */
 footer{
