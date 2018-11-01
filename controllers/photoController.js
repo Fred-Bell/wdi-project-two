@@ -58,7 +58,9 @@ function likeRoute (req, res){
     .then(result => {
       result.likedBy.push(req.body.likedBy);
       result.save()
-        .then( () => res.redirect(`/photos/${req.params.id}`));
+        .then(setTimeout(function(){
+          res.redirect(`/photos/${req.params.id}`);
+        }, 700 ));
     });
 }
 

@@ -232,6 +232,7 @@ footer div a{
   border: solid 1px lightgrey;
   background-color: white;
   margin-top: 3vh;
+  position: relative;
 }
 
 #poster-show{
@@ -265,4 +266,20 @@ footer div a{
 .comment{
   padding: 1vh;
   border-top: 0.5px solid lightgrey;
+}
+
+.love-heart{
+  z-index: 2;
+  position: absolute;
+  color: white;
+  font-size: 300px;
+  left: 18%;
+  top: 20%;
+  opacity: 0;
+}
+
+@keyframes heartBeat {
+  0%{opacity: 0;}
+  50%{opacity: 0.8;}
+  100%{opacity: 0;}
 }
