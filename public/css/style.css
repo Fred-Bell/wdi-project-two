@@ -103,9 +103,6 @@ a{
   justify-content: center;
 }
 
-.explore-postbox:hover img{
-  opacity: 0.5;
-}
 
 .explore-post{
   width: 25vw;
@@ -119,6 +116,9 @@ a{
   transition: opacity 0.6s;
 }
 
+.explore-postbox:hover img{
+  opacity: 0.5;
+}
 .explore-post img:hover{
   opacity: 1;
 }

@@ -17,7 +17,7 @@ const userData = [
     admin: true,
     password: 'pass',
     profilePicture: 'https://i.imgur.com/aIPiztH.jpg',
-    bio: 'I like to party',
+    bio: 'Work hard, play hard',
     followers: 0
   },
   {
