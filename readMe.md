@@ -10,6 +10,31 @@ Fredstagram is an instagram clone photo sharing and social media platform.
 
 ___
 
+## Brief
+
+To create a RESTful a photo sharing app, akin to an Instagram clone. The app had to had to meet the following criteria:
+* Has a User model and user authentication
+* Has models for photos and users
+* Allows users to add, edit, and delete posts and comments.
+* Users can only delete the comments and posts that they added.
+* Is styled with Bulma, but doesn't look like Bulma
+
+---
+
+## Technologies Used:
+
+* JavaScript (ECMAScript 6)
+* CSS
+* Node.js
+* MongoDB
+* EJS
+* Express
+* Mongoose
+* Git
+* Heroku
+
+---
+
 ## Screenshot Walk-through
 
 ### Home page when not logged in
@@ -35,31 +60,6 @@ ___
 ### Clicking on the compass icon in the nav takes you to the explore page. Here a user can look through photos from anyone and find other users they might wish to follow. The post with the mouse hovering over it is highlighted.
 
 ![Explore page](screenshots/explore-page.png)
-
----
-
-## Brief
-
-To create a RESTful a photo sharing app, akin to an Instagram clone. The app had to had to meet the following criteria:
-* Has a User model and user authentication
-* Has models for photos and users
-* Allows users to add, edit, and delete posts and comments.
-* Users can only delete the comments and posts that they added.
-* Is styled with Bulma, but doesn't look like Bulma
-
----
-
-## Technologies Used:
-
-* JavaScript (ECMAScript 6)
-* CSS
-* Node.js
-* MongoDB
-* EJS
-* Express
-* Mongoose
-* Git
-* Heroku
 
 ___
 
@@ -95,12 +95,12 @@ function followProfileRoute (req, res){
 
 ### Styling
 
-I took a similar approach to styling this project and wanted to keep it as authentic to instagram as possible. To fit the brief I used bulma to get a starting point for the styling then put my own css on top of that.
+I took a similar approach to styling this project and wanted to keep it as authentic to instagram as possible. To fit the brief I used Bulma to get a starting point for the styling then put my own css on top of that.
 
 
 #### Featured piece of code 2
 
-This CSS is for the heart animation that overlayed on a photo briefly when a user clicks the like button. It's a feature from the actual site that I feel makes my project feel more like it.
+This CSS is for the heart animation that overlaid on a photo briefly when a user clicks the like button. It's a feature from the actual site that I feel makes my project feel a lot more like it.
 
 ``` CSS
 .love-heart{
@@ -120,7 +120,17 @@ This CSS is for the heart animation that overlayed on a photo briefly when a use
 }
 
 ```
+___
 
+## Wins and Blockers
+
+A big win was how quickly and smoothly I got the app's basic functionality working, including its RESTful routes.
+
+Bulma was also somewhat of a challenge, since I hadn't used it much before. I had a clear idea of what I wanted the app to look like, and sometimes felt Bulma was hard to work with in that way, and that it was hard to make the app not look like Bulma defaults. But after some customisation, I managed to design an app I was happy with.
+
+
+
+___
 ## Future Features
 
 I think if I would more time to work on this project there are a number of things I would do to improve it. I would definitely work towards making it more mobile responsive as  I feel mobile use is a key feature of Instagram. I'd also like to implement some form of follow suggestions based on who you are currently following. I would also include time stamps in to the posts and comments and sort them by time added in the feed.
